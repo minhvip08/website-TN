@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { fetchRSVPs as apiFetchRSVPs, fetchRSVPStats, submitRSVP } from './rsvpApi';
 
 const INTRO_TEXT = `Thân gửi những người tôi yêu…. Nếu bạn đọc được những dòng tin nhắn này, thì bạn chính là một trong những người quan trọng nhất đối với Minh Dương. Xin được gửi lời cảm ơn sâu sắc đến bạn – người đã đồng hành cùng Minh Dương trong suốt quãng đời sinh viên đầy trọn vẹn và ý nghĩa. Giờ đây, hãy để Minh Dương được ghi lại những kỷ niệm đáng quý này bằng những tấm hình chụp mang đầy màu sắc với bạn trong buổi lễ tốt nghiệp thiêng liêng ấy. Rồi chúng ta sẽ có dịp gặp lại vào những ngày không xa…. Cảm ơn người đã thức cùng tôi!`;
@@ -30,7 +31,6 @@ function App() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [rsvps, setRsvps] = useState([]);
   const [stats, setStats] = useState({ total: 0, attending: 0, not_attending: 0 });
-  const [isLoadingGuestbook, setIsLoadingGuestbook] = useState(false);
   const [toast, setToast] = useState({ show: false, message: '' });
   const [confetti, setConfetti] = useState([]);
   const [sparkleEffects, setSparkleEffects] = useState([]);
@@ -67,15 +67,6 @@ function App() {
     } catch (error) {
       console.warn('Lỗi tải RSVP từ backend. Dùng dự phòng LocalStorage:', error);
       loadFromLocalStorage();
-    }
-  };
-
-  const fetchAllData = async () => {
-    setIsLoadingGuestbook(true);
-    try {
-      await loadRSVPs();
-    } finally {
-      setIsLoadingGuestbook(false);
     }
   };
 
@@ -720,110 +711,6 @@ function App() {
             </button>
           </form>
 
-          {/* DANH SÁCH KHÁCH MỜI — chỉ admin (?admin=true) */}
-          {isAdmin && (
-            <div className="guest-list-section">
-              <h3 className="guest-list-title">
-                👥 Những người bạn đã gửi phản hồi ({rsvps.length})
-              </h3>
-
-              <div className="guest-cards-container">
-                {rsvps.length === 0 ? (
-                  <p className="guest-empty">
-                    Chưa có ai gửi xác nhận. Hãy là người đầu tiên!
-                  </p>
-                ) : (
-                  rsvps.map((guest) => (
-                    <article key={guest.id} className="guest-card">
-                      <div className="guest-card-header">
-                        <div className="guest-name" title={guest.name}>{guest.name}</div>
-                        <span className={`guest-badge ${guest.attending ? 'badge-yes' : 'badge-no'}`}>
-                          {guest.attending ? 'Sẽ tham gia' : 'Vắng mặt'}
-                        </span>
-                      </div>
-                      {guest.message && <div className="guest-message">“{guest.message}”</div>}
-                      <span className="guest-time">
-                        {new Date(guest.created_at).toLocaleString('vi-VN', {
-                          hour: '2-digit',
-                          minute: '2-digit',
-                          day: '2-digit',
-                          month: '2-digit',
-                        })}
-                      </span>
-                    </article>
-                  ))
-                )}
-              </div>
-            </div>
-          )}
-        </section>
-
-        {/* ==========================================
-            MỤC 5B: LỜI CHÚC TỪ BẠN BÈ (PUBLIC GUESTBOOK)
-            Hiển thị công khai danh sách RSVP + thống kê đọc từ backend API.
-           ========================================== */}
-        <section className="section-card variant-feature" id="loi-chuc" aria-labelledby="loi-chuc-title">
-          <h2 className="section-title" id="loi-chuc-title">
-            <svg className="section-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" /></svg>
-            Lời chúc từ bạn bè
-          </h2>
-
-          {/* THỐNG KÊ XÁC NHẬN */}
-          <div className="rsvp-stats-grid">
-            <div className="rsvp-stat-item">
-              <span className="rsvp-stat-num">{stats.total}</span>
-              <span className="rsvp-stat-label">Phản hồi</span>
-            </div>
-            <div className="rsvp-stat-item">
-              <span className="rsvp-stat-num">{stats.attending}</span>
-              <span className="rsvp-stat-label">Sẽ đến 🥳</span>
-            </div>
-            <div className="rsvp-stat-item">
-              <span className="rsvp-stat-num">{stats.not_attending}</span>
-              <span className="rsvp-stat-label">Bận 😢</span>
-            </div>
-          </div>
-
-          {/* NÚT TẢI LẠI */}
-          <div className="guestbook-actions">
-            <button
-              type="button"
-              className="bubbly-button btn-focus"
-              onClick={fetchAllData}
-              disabled={isLoadingGuestbook}
-            >
-              {isLoadingGuestbook ? 'Đang tải...' : '↻ Tải lại lời chúc'}
-            </button>
-          </div>
-
-          {/* DANH SÁCH LỜI CHÚC — PUBLIC */}
-          <div className="guest-cards-container guest-cards-public">
-            {rsvps.length === 0 ? (
-              <p className="guest-empty">
-                Chưa có lời chúc nào. Hãy là người đầu tiên gửi lời chúc cho Minh Dương nhé! 💌
-              </p>
-            ) : (
-              rsvps.map((guest) => (
-                <article key={guest.id} className="guest-card">
-                  <div className="guest-card-header">
-                    <div className="guest-name" title={guest.name}>{guest.name}</div>
-                    <span className={`guest-badge ${guest.attending ? 'badge-yes' : 'badge-no'}`}>
-                      {guest.attending ? 'Sẽ tham gia' : 'Vắng mặt'}
-                    </span>
-                  </div>
-                  {guest.message && <div className="guest-message">“{guest.message}”</div>}
-                  <span className="guest-time">
-                    {new Date(guest.created_at).toLocaleString('vi-VN', {
-                      hour: '2-digit',
-                      minute: '2-digit',
-                      day: '2-digit',
-                      month: '2-digit',
-                    })}
-                  </span>
-                </article>
-              ))
-            )}
-          </div>
         </section>
 
         {/* ==========================================

@@ -44,6 +44,25 @@ def get_rsvps(db: Session = Depends(get_db)):
     # Returns RSVP entries ordered by creation date, newest first
     return db.query(models.RSVP).order_by(models.RSVP.created_at.desc()).all()
 
+
+@app.get("/api/rsvp/stats")
+def get_rsvp_stats(db: Session = Depends(get_db)):
+    """Trả về thống kê số lượng xác nhận tham dự để frontend hiển thị."""
+    total = db.query(models.RSVP).count()
+    attending = db.query(models.RSVP).filter(models.RSVP.attending == True).count()
+    not_attending = total - attending
+    return {
+        "total": total,
+        "attending": attending,
+        "not_attending": not_attending,
+    }
+
+
+@app.get("/")
+def health():
+    return {"status": "ok", "service": "Graduation RSVP API"}
+
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)

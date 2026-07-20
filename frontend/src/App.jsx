@@ -38,10 +38,10 @@ function App() {
   // và cập nhật đường dẫn dưới đây (ví dụ: '/anh_tot_nghiep_1.jpg')
   // =========================================================================
   const personalPhotos = [
-    '/pt2.jpg',      // Ảnh 1 (Mặc định)
-    '/pt3.jpg',    // Ảnh 2 (Click để đổi)
-    '/pt4.jpg',
-    '/pt5.jpg',
+    '/pt2.JPG',      // Ảnh 1 (Mặc định)
+    '/pt3.JPG',    // Ảnh 2 (Click để đổi)
+    '/pt4.JPG',
+    '/pt5.JPG',
   ];
   const [currentPhotoIdx, setCurrentPhotoIdx] = useState(0);
 
@@ -70,8 +70,8 @@ function App() {
     } else {
       // Dữ liệu mẫu ban đầu để giao diện trông sinh động hơn
       const mockData = [
-        { id: 1, name: 'Nguyễn Văn A', attending: true, message: 'Chúc mừng Phúc Thành nhé! Chúc bạn bay cao bay xa!', created_at: new Date().toISOString() },
-        { id: 2, name: 'Trần Thị B', attending: true, message: 'Mãi đỉnh Thành ơi, nhất định mình sẽ tới!', created_at: new Date().toISOString() }
+{ id: 1, name: 'Nguyễn Văn A', attending: true, message: 'Chúc mừng Minh Dương nhé! Chúc bạn ngày tốt nghiệp thật rực rỡ ✨', created_at: new Date().toISOString() },
+      { id: 2, name: 'Trần Thị B', attending: true, message: 'Mãi iu Dương nha, mình nhất định sẽ tới! ❤️', created_at: new Date().toISOString() }
       ];
       setRsvps(mockData);
       localStorage.setItem('rsvp_backup', JSON.stringify(mockData));
@@ -102,7 +102,7 @@ function App() {
     setIntroStars(starsArray);
 
     // --- HIỆU ỨNG ĐÁNH CHỮ INTRO ---
-    const fullText = "Thân gửi những người tôi yêu…. Nếu bạn đọc được những dòng tin nhắn này, thì bạn chính là một trong những người quan trọng nhất đối với Phúc Thành. Xin được gửi lời cảm ơn sâu sắc đến bạn – người đã đồng hành cùng Phúc Thành trong suốt quãng đời sinh viên đầy trọn vẹn và ý nghĩa. Giờ đây, hãy để Phúc Thành được ghi lại những kỷ niệm đáng quý này bằng những tấm hình chụp mang đầy màu sắc với bạn trong buổi lễ tốt nghiệp thiêng liêng ấy. Rồi chúng ta sẽ có dịp gặp lại vào những ngày không xa…. Cảm ơn người đã thức cùng tôi!";
+    const fullText = "Thân gửi những người tôi yêu…. Nếu bạn đọc được những dòng tin nhắn này, thì bạn chính là một trong những người quan trọng nhất đối với Minh Dương. Xin được gửi lời cảm ơn sâu sắc đến bạn – người đã đồng hành cùng Minh Dương trong suốt quãng đời sinh viên đầy trọn vẹn và ý nghĩa. Giờ đây, hãy để Minh Dương được ghi lại những kỷ niệm đáng quý này bằng những tấm hình chụp mang đầy màu sắc với bạn trong buổi lễ tốt nghiệp thiêng liêng ấy. Rồi chúng ta sẽ có dịp gặp lại vào những ngày không xa…. Cảm ơn người đã thức cùng tôi!";
     let currentIdx = 0;
     typingIntervalRef.current = setInterval(() => {
       if (currentIdx < fullText.length) {
@@ -115,7 +115,7 @@ function App() {
     }, 35);
 
     // --- KHỜI TẠO ĐỒNG HỒ ĐẾM NGƯỢC ---
-    const targetDate = new Date('2026-06-09T11:00:00+07:00');
+    const targetDate = new Date('2026-08-07T14:00:00+07:00');
     const updateCountdown = () => {
       const now = new Date();
       const difference = targetDate - now;
@@ -179,7 +179,7 @@ function App() {
 
   // --- XỬ LÝ CLICK TRÊN MÀN HÌNH INTRO ---
   const handleIntroClick = () => {
-    const fullText = "Thân gửi những người tôi yêu…. Nếu bạn đọc được những dòng tin nhắn này, thì bạn chính là một trong những người quan trọng nhất đối với Phúc Thành. Xin được gửi lời cảm ơn sâu sắc đến bạn – người đã đồng hành cùng Phúc Thành trong suốt quãng đời sinh viên đầy trọn vẹn và ý nghĩa. Giờ đây, hãy để Phúc Thành được ghi lại những kỷ niệm đáng quý này bằng những tấm hình chụp mang đầy màu sắc với bạn trong buổi lễ tốt nghiệp thiêng liêng ấy. Rồi chúng ta sẽ có dịp gặp lại vào những ngày không xa…. Cảm ơn người đã thức cùng tôi!";
+    const fullText = "Thân gửi những người tôi yêu…. Nếu bạn đọc được những dòng tin nhắn này, thì bạn chính là một trong những người quan trọng nhất đối với Minh Dương. Xin được gửi lời cảm ơn sâu sắc đến bạn – người đã đồng hành cùng Minh Dương trong suốt quãng đời sinh viên đầy trọn vẹn và ý nghĩa. Giờ đây, hãy để Minh Dương được ghi lại những kỷ niệm đáng quý này bằng những tấm hình chụp mang đầy màu sắc với bạn trong buổi lễ tốt nghiệp thiêng liêng ấy. Rồi chúng ta sẽ có dịp gặp lại vào những ngày không xa…. Cảm ơn người đã thức cùng tôi!";
 
     if (introText.length < fullText.length) {
       // Nhấp lần đầu: Hiển thị toàn bộ chữ ngay lập tức
@@ -263,7 +263,7 @@ function App() {
         const savedRSVP = data[0];
         // Cập nhật state danh sách
         setRsvps((prev) => [savedRSVP, ...prev]);
-        showToast('🎉 Phúc Thành nhận thông tin nhóaaa');
+        showToast('Em đã nhận được tín hiệu của mình ạaaa ❤️‍🔥');
         triggerConfetti();
         // Reset form
         setName('');
@@ -326,7 +326,7 @@ function App() {
           <div className="intro-card" onClick={(e) => e.stopPropagation()}>
             <p className="intro-quote">
               {introText}
-              {introText.length < "Thân gửi những người tôi yêu…. Nếu bạn đọc được những dòng tin nhắn này, thì bạn chính là một trong những người quan trọng nhất đối với Phúc Thành. Xin được gửi lời cảm ơn sâu sắc đến bạn – người đã đồng hành cùng Phúc Thành trong suốt quãng đời sinh viên đầy trọn vẹn và ý nghĩa. Giờ đây, hãy để Phúc Thành được ghi lại những kỷ niệm đáng quý này bằng những tấm hình chụp mang đầy màu sắc với bạn trong buổi lễ tốt nghiệp thiêng liêng ấy. Rồi chúng ta sẽ có dịp gặp lại vào những ngày không xa…. Cảm ơn người đã thức cùng tôi!".length && (
+              {introText.length < "Thân gửi những người tôi yêu…. Nếu bạn đọc được những dòng tin nhắn này, thì bạn chính là một trong những người quan trọng nhất đối với Minh Dương. Xin được gửi lời cảm ơn sâu sắc đến bạn – người đã đồng hành cùng Minh Dương trong suốt quãng đời sinh viên đầy trọn vẹn và ý nghĩa. Giờ đây, hãy để Minh Dương được ghi lại những kỷ niệm đáng quý này bằng những tấm hình chụp mang đầy màu sắc với bạn trong buổi lễ tốt nghiệp thiêng liêng ấy. Rồi chúng ta sẽ có dịp gặp lại vào những ngày không xa…. Cảm ơn người đã thức cùng tôi!".length && (
                 <span className="intro-cursor"></span>
               )}
             </p>
@@ -421,7 +421,7 @@ function App() {
             <div className="polaroid-image-container">
               <img
                 src={personalPhotos[currentPhotoIdx]}
-                alt="Phúc Thành Graduation"
+                alt="Minh Dương Graduation"
                 className="polaroid-image"
               />
 
@@ -441,21 +441,21 @@ function App() {
 
             {/* Tên hiển thị kiểu chữ dễ thương viền trắng */}
             <div className="polaroid-caption">
-              PHÚC THÀNH
+              MINH DƯƠNG
             </div>
           </div>
         </header>
 
 
         <p className="photo-switch-hint">
-          <span>✨</span> Nhấp vào ảnh để xem thêm Phúc Thành đẹp trai như nào nhóa!
+          <span>✨</span> Nhấp vào ảnh để xem Minh Dương xinh xắn như thế nèo nhóaaa
         </p>
 
         {/* =========================================================================
               ĐỒNG HỒ ĐẾM NGƯỢC (COUNTDOWN TIMER)
              ========================================================================= */}
         <div className="countdown-container">
-          <div className="countdown-title">⏳ Đếm ngược tới ngày được gặp anh Thành nò!</div>
+          <div className="countdown-title">⏳ Đếm ngược tới ngày được gặp Minh Dương nò!</div>
           <div className="countdown-timer">
             <div className="countdown-item">
               <span className="countdown-number">{timeLeft.days}</span>
@@ -486,25 +486,25 @@ function App() {
              ========================================================================= */}
         <div className="section-card" style={{ marginTop: '25px', textAlign: 'center' }}>
           <p style={{ fontSize: '1.25rem', fontWeight: '600', color: '#2c3e50', lineHeight: '1.8', textAlign: 'center' }}>
-            Thân mời bạn đến chung vui trong ngày tốt nghiệp của
+            Thân mời bạn đến chung vui và chúc mừng cho tân cử nhân
 
             <strong style={{
               display: 'block',
-              color: 'var(--grass-green-dark)',
+              color: '#1e3a8a',
               fontSize: '1.6rem',
               fontFamily: 'var(--font-display)',
               marginTop: '0.5rem',
               marginBottom: '0.2rem'
             }}>
-              PHÚC THÀNH aka BLUBERRIES
+              MINH DƯƠNG aka MIND
             </strong>
 
             <span style={{ display: 'block', fontSize: '1.2rem', fontWeight: '500' }}>
-              Cử nhân ngành Khoa học Máy tính – UIT
+              Cử nhân ngành Luật – khoa Luật Thương mại
             </span>
           </p>
           <p style={{ fontSize: '1.05rem', color: 'var(--light-text)', marginTop: '10px' }}>
-            Được chụp cùng bạn một bức hình (và nhận quà của bạn) là niềm vui mà mình luôn hằng ao ước.
+            Được chụp cùng bạn một tấm ảnh và nhận lời chúc mừng của bạn là niềm vui lớn nhất trong điểm cuối của chặng đường vừa qua 😍
           </p>
         </div>
 
@@ -527,9 +527,8 @@ function App() {
             <div className="detail-item">
               <div className="detail-icon">📅</div>
               <div className="detail-label">Thời gian</div>
-              <div className="detail-value">11h00 - 12h30</div>
-              <div className="detail-value">Thứ Ba, 09/06/2026</div>
-              <div className="detail-subvalue">(Có thể sẽ trễ hơn dự kiến nếu trường không thả mình ra sớm nhé)</div>
+              <div className="detail-value">14 giờ 00 đến 16 giờ 00</div>
+              <div className="detail-value">Thứ Sáu, ngày 07/8/2026</div>
             </div>
 
             {/* =========================================================================
@@ -539,10 +538,10 @@ function App() {
             <div className="detail-item">
               <div className="detail-icon">🎓</div>
               <div className="detail-label">Địa điểm</div>
-              <div className="detail-value">Sảnh trước tòa E </div>
-              <div className="detail-value">(ngay logo UIT bự chà bá)</div>
-              <div className="detail-value">Trường ĐH CNTT - UIT</div>
-              <div className="detail-subvalue">Đại học Quốc gia TP.HCM</div>
+              <div className="detail-value">Sân trường - Sảnh A</div>
+              <div className="detail-value">(ngay logo Ulaw vàng chói ở sảnh A)</div>
+              <div className="detail-value">Trường Đại học Luật TP. Hồ Chí Minh</div>
+              <div className="detail-subvalue">Số 02 Nguyễn Tất Thành, phường Xóm Chiếu, TP. Hồ Chí Minh</div>
             </div>
           </div>
         </div>
@@ -562,20 +561,17 @@ function App() {
                 CHỈNH SỬA: NỘI DUNG MÔ TẢ ĐỊA ĐIỂM
                ========================================================================= */}
           <p style={{ textAlign: 'left', marginBottom: '10px' }}>
-            📍 <strong>Trường Đại học Công nghệ Thông tin (UIT)</strong>: Khu phố 6, phường Linh Trung, TP. Thủ Đức, TP. Hồ Chí Minh.
-          </p>
-          <p style={{ textAlign: 'left', fontSize: '0.95rem', color: 'var(--light-text)' }}>
-            Ráng chạy theo ggm nhé chứ cái này mình khó mà chỉ....
+            📍 <strong>Trường Đại học Luật TP. Hồ Chí Minh (cơ sở 1)</strong>: Số 02 Nguyễn Tất Thành, phường Xóm Chiếu, TP. Hồ Chí Minh.
           </p>
 
-          {/* BẢN ĐỒ GOOGLE MAPS NHÚNG (Bản đồ thực tế của UIT) */}
+          {/* BẢN ĐỒ GOOGLE MAPS NHÚNG (Bản đồ thực tế của Ulaw) */}
           <div className="map-iframe-container">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.232428509312!2d106.80161377573752!3d10.870008857463695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527587e68d563%3A0xdb65d9afb890886b!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgVGjDtG5nIHRpbiAtIMSQSFFHIFRQLkhDTQ!5e0!3m2!1svi!2s!4v1716380000000!5m2!1svi!2s"
+              src="https://www.google.com/maps?q=Trường Đại học Luật TP.HCM&output=embed"
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Bản đồ UIT"
+              title="Bản đồ Ulaw"
             ></iframe>
           </div>
 
@@ -584,7 +580,7 @@ function App() {
                 Thay thuộc tính href bằng link Google Maps của bạn nếu cần
                ========================================================================= */}
           <a
-            href="https://maps.app.goo.gl/9k4XMUJwcHS4VPx78"
+            href="https://maps.app.goo.gl/ZspPUchBfXjSqYF1A?g_st=ic"
             target="_blank"
             rel="noopener noreferrer"
             className="map-button-link"
@@ -603,7 +599,7 @@ function App() {
             Sơ đồ Khuôn viên UIT
           </h2>
           <p style={{ textAlign: 'left', marginBottom: '15px' }}>
-            🗺️ <strong>Sơ đồ giảng đường & các khu vực</strong>: Tòa A sẽ là nơi làm lễ chính. Nếu thuận lợi, sau khi làm lễ xong, mình sẽ di chuyển đến <strong>Sân trước tòa E</strong> (ngay trước cái logo UIT bự bành ki nằm đối diện cổng A) để chụp hình.
+            🗺️ <strong>Sơ đồ giảng đường & các khu vực</strong>: Sảnh A sẽ là nơi làm lễ chính. Sau khi làm lễ xong, mình sẽ di chuyển ra <strong>Sân trường</strong> (ngay logo Ulaw vàng chói ở sảnh A) để chụp hình cùng mọi người.
           </p>
           <div className="campus-map-container">
             <img
@@ -630,29 +626,17 @@ function App() {
                 CHỈNH SỬA: CÁC BƯỚC HƯỚNG DẪN GỬI XE
                 Thay đổi hoặc thêm bớt các bước bên dưới tùy tình hình thực tế
                ========================================================================= */}
-          <ul className="parking-steps">
+<ul className="parking-steps">
             <li className="parking-step-item">
               <div className="parking-step-num">1</div>
               <div className="parking-step-text">
-                <strong>Bãi gửi xe:</strong> Nằm phía bên tay trái nếu đi vào bằng cổng A (cổng Hàn Thuyên). Nếu bạn đi vào bằng cổng B (cổng Xa lộ Hà Nội), hãy men theo con đường nhựa, vòng qua tòa nhà B để đến bãi giữ xe.
+                <strong>Bãi gửi xe:</strong> Gần trường như chỉ dẫn bên trên thì có 2 bãi giữ xe là “<a href="https://maps.app.goo.gl/4b7LMUuTdgAcLUkv8?g_st=ic" target="_blank" rel="noopener noreferrer">Bãi giữ xe 1 Bến Vân Đồn</a>” và “<a href="https://maps.app.goo.gl/myQLZ4KFxc7CAjdV8?g_st=ic" target="_blank" rel="noopener noreferrer">Bãi giữ xe Bộ đội Biên phòng cũ</a>” để mọi người gửi xe ạ. Tuy nhiên, tớ thấy Bãi giữ xe 1 Bến Vân Đồn tốt hơn nhiều, nếu được mọi người hãy gửi ở đó nhé! Với cả mọi người nhớ đi đúng chiều, đừng chạy ngược chiều dễ bị “mấy ảnh” giữ lại lắm nhooo.
               </div>
             </li>
             <li className="parking-step-item">
               <div className="parking-step-num">2</div>
               <div className="parking-step-text">
-                <strong>Lấy thẻ xe:</strong> Nếu bạn không phải sinh viên UIT, hãy nhắc bảo vệ lấy thẻ xe. Còn nếu là sinh viên UIT thì chỉ cần quét thẻ sinh viên.
-              </div>
-            </li>
-            <li className="parking-step-item">
-              <div className="parking-step-num">3</div>
-              <div className="parking-step-text">
-                <strong>Chi phí gửi xe:</strong> 4k nếu là sinh viên ngoài, 3k nếu là sinh viên UIT.
-              </div>
-            </li>
-            <li className="parking-step-item">
-              <div className="parking-step-num">4</div>
-              <div className="parking-step-text">
-                <strong>Lưu ý:</strong> Sau khi gửi xe xong, bạn có thể đi khám phá xung quanh trường hoặc liên hệ mình để mình ra đón nhé (nếu mình đã làm lễ xong).
+                <strong>Chi phí gửi xe:</strong> Mỗi lượt gửi xe gắn máy ở bãi sẽ là 6.000 đồng ạ.
               </div>
             </li>
           </ul>
@@ -670,13 +654,13 @@ function App() {
           </h2>
 
           <p style={{ textAlign: 'left', marginBottom: '20px', color: 'var(--light-text)' }}>
-            Hãy phản hồi giúp mình trước ngày <strong>07/06/2026</strong> để mình chuẩn bị đón tiếp chu đáo nhất nhé!
+            Hãy phản hồi giúp tớ trước ngày <strong>06/8/2026</strong> để tớ đón tiếp được chu đáo nhất ạaaaaa ❤️
           </p>
 
           <form onSubmit={handleSubmitRSVP} className="rsvp-form-container">
             {/* Nhập Họ và tên */}
             <div className="form-group">
-              <label htmlFor="guest-name" className="form-label">Cho mình xin bí danh nha! (viết sao cho mình biết là ai á...)*</label>
+              <label htmlFor="guest-name" className="form-label">Cho tớ xin danh tính cụa bạn với nhooooa! (viết sao cho tớ biết là ai á...)*</label>
               <input
                 type="text"
                 id="guest-name"
@@ -690,7 +674,7 @@ function App() {
 
             {/* Câu hỏi lựa chọn Có/Không */}
             <div className="form-group">
-              <label className="form-label">Bạn sẽ đến và chụp cùng mình tấm ảnh chứ?</label>
+              <label className="form-label">Bạn có thể đến và chụp cùng tớ tấm ảnh chứ ạ?</label>
               <div className="rsvp-options-grid">
 
                 {/* Lựa chọn CÓ tham gia */}
@@ -699,7 +683,7 @@ function App() {
                   onClick={() => setAttending(true)}
                 >
                   <div className="option-emoji">🥳</div>
-                  <div className="option-title option-title-yes">Em sẽ đến chụp chung vs anh Thành đẹp trai ạaaa!!</div>
+                  <div className="option-title option-title-yes">Tớ sẽ đến chung vui với Minh Dương đáng iu nhóaaa 👏</div>
                   <div className="option-desc">ok iu iu moa moa!</div>
                 </div>
 
@@ -709,8 +693,8 @@ function App() {
                   onClick={() => setAttending(false)}
                 >
                   <div className="option-emoji">😢</div>
-                  <div className="option-title option-title-no">Thằng bố m bận rồi cu!</div>
-                  <div className="option-desc">Thoai không sao, nhưng nhớ gửi quà cho mình sau nhé hẹ hẹ.!</div>
+                  <div className="option-title option-title-no">Ú nâu, hôm đó tớ có việc bận rùi 🙁!</div>
+                  <div className="option-desc">Dạ hỏng seo, mình sẽ hẹn gặp nhau sau nhé, chưa thoát khỏi tớ đựợc đâu hẹ hẹ 😁</div>
                 </div>
 
               </div>
@@ -718,7 +702,7 @@ function App() {
 
             {/* Lời chúc gửi kèm */}
             <div className="form-group">
-              <label htmlFor="guest-msg" className="form-label">Bạn có gì muốn nhắn gửi đến mình hông?</label>
+              <label htmlFor="guest-msg" className="form-label">Bạn có điều gì muốn nhắn gửi tớ hăm ạ 😊</label>
               <textarea
                 id="guest-msg"
                 className="form-input"
@@ -789,7 +773,7 @@ function App() {
           </h2>
 
           <p style={{ textAlign: 'left', marginBottom: '15px', color: 'var(--light-text)' }}>
-            Nếu bạn có câu hỏi hoặc cần hỗ trợ thêm thông tin gì, đừng ngần ngại liên lạc với Phúc Thành qua:
+            Nếu bạn có câu hỏi hoặc cần hỗ trợ thêm thông tin gì, đừng ngần ngại liên lạc với tớ qua:
           </p>
 
           <div className="contacts-grid">
@@ -797,11 +781,11 @@ function App() {
                   CHỈNH SỬA: SỐ ĐIỆN THOẠI
                   Thay đổi tel: số điện thoại và số hiển thị bên dưới
                  ========================================================================= */}
-            <a href="tel:0982962655" className="contact-link-card">
+            <a href="tel:0908056949" className="contact-link-card">
               <div className="contact-icon-wrapper">📞</div>
               <div className="contact-info-text">
                 <span className="contact-title">Điện thoại</span>
-                <span className="contact-value">0982 962 655</span>
+                <span className="contact-value">0908 056 949</span>
               </div>
             </a>
 
@@ -809,11 +793,11 @@ function App() {
                   CHỈNH SỬA: EMAIL
                   Thay đổi mailto: email và email hiển thị bên dưới
                  ========================================================================= */}
-            <a href="mailto:phucthanhlqm@gmail.com" className="contact-link-card">
+            <a href="mailto:leminhduong1604@gmail.com" className="contact-link-card">
               <div className="contact-icon-wrapper">✉️</div>
               <div className="contact-info-text">
                 <span className="contact-title">Email</span>
-                <span className="contact-value">phucthanhlqm@gmail.com</span>
+                <span className="contact-value">leminhduong1604@gmail.com</span>
               </div>
             </a>
 
@@ -822,7 +806,7 @@ function App() {
                   Thay đổi href thành link Facebook của bạn
                  ========================================================================= */}
             <a
-              href="https://www.facebook.com/phucthanh.nguyen.564"
+              href="https://www.facebook.com/share/18wApis99D/?mibextid=wwXIfr"
               target="_blank"
               rel="noopener noreferrer"
               className="contact-link-card"
@@ -831,7 +815,7 @@ function App() {
               <div className="contact-icon-wrapper">💬</div>
               <div className="contact-info-text">
                 <span className="contact-title">Facebook</span>
-                <span className="contact-value">fb.com/phucthanh</span>
+                <span className="contact-value">fb.com/minhduong</span>
               </div>
             </a>
           </div>
@@ -841,8 +825,8 @@ function App() {
 
       {/* FOOTER */}
       <footer>
-        <p>🎓 Made with ❤️ for Phuc Thanh's Graduation Day 🎓</p>
-        <p style={{ fontSize: '0.8rem', marginTop: '10px', opacity: 0.7 }}>© 2026 Phúc Thành. All rights reserved.</p>
+        <p>🎓 Made with ❤️ for Minh Dương's Graduation Day 🎓</p>
+        <p style={{ fontSize: '0.8rem', marginTop: '10px', opacity: 0.7 }}>© 2026 Minh Dương. All rights reserved.</p>
       </footer>
 
       {/* NÚT PHÁT NHẠC NỀN FLOATING */}

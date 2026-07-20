@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { fetchRSVPs as apiFetchRSVPs, fetchRSVPStats, submitRSVP } from './api';
+import { fetchRSVPs as apiFetchRSVPs, fetchRSVPStats, submitRSVP } from './rsvpApi';
 
 const INTRO_TEXT = `Thân gửi những người tôi yêu…. Nếu bạn đọc được những dòng tin nhắn này, thì bạn chính là một trong những người quan trọng nhất đối với Minh Dương. Xin được gửi lời cảm ơn sâu sắc đến bạn – người đã đồng hành cùng Minh Dương trong suốt quãng đời sinh viên đầy trọn vẹn và ý nghĩa. Giờ đây, hãy để Minh Dương được ghi lại những kỷ niệm đáng quý này bằng những tấm hình chụp mang đầy màu sắc với bạn trong buổi lễ tốt nghiệp thiêng liêng ấy. Rồi chúng ta sẽ có dịp gặp lại vào những ngày không xa…. Cảm ơn người đã thức cùng tôi!`;
 

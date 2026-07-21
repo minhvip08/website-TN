@@ -580,6 +580,14 @@ function App() {
             <br />
             Cuối cùng, em cảm ơn mọi người vì đã luôn yêu thương, ủng hộ và đồng hành cùng em trong suốt chặng đường vừa qua. Yêu cả nhà mình rất nhiều ạaaaaa 💞
           </p>
+
+          <div className="campus-map-container">
+            <img
+              src="/UITMap.png"
+              alt="Sơ đồ khuôn viên UIT" 
+              className="campus-map-img"
+            />
+          </div>
         </section>
 
         {/* ==========================================

@@ -2,7 +2,9 @@ import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { fetchRSVPs as apiFetchRSVPs, fetchRSVPStats, submitRSVP } from './rsvpApi';
 
-const INTRO_TEXT = `Thân gửi những người tôi yêu…. Nếu bạn đọc được những dòng tin nhắn này, thì bạn chính là một trong những người quan trọng nhất đối với Minh Dương. Xin được gửi lời cảm ơn sâu sắc đến bạn – người đã đồng hành cùng Minh Dương trong suốt quãng đời sinh viên đầy trọn vẹn và ý nghĩa. Giờ đây, hãy để Minh Dương được ghi lại những kỷ niệm đáng quý này bằng những tấm hình chụp mang đầy màu sắc với bạn trong buổi lễ tốt nghiệp thiêng liêng ấy. Rồi chúng ta sẽ có dịp gặp lại vào những ngày không xa…. Cảm ơn người đã thức cùng tôi!`;
+const INTRO_TEXT = `Thân gửi những mảnh ghép đặc biệt trong thanh xuân của tớ 🌺
+Nếu bạn đang đọc những dòng này, nghĩa là bạn đã trở thành một phần thật đẹp trong thanh xuân của Minh Dương. Cảm ơn bạn vì đã đồng hành cùng tớ suốt bốn năm đại học đầy kỷ niệm. Hãy cùng tớ lưu giữ khoảnh khắc rực rỡ cuối cùng ở trạm dừng này, để rồi một ngày nắng đẹp rất gần thôi chúng ta sẽ gặp lại nhau 🌇
+Cảm ơn bạn vì đã cùng tớ đi đến thời khắc này 🎆`;
 
 const EVENT_DATE = new Date('2026-08-07T14:00:00+07:00');
 
@@ -404,6 +406,10 @@ function App() {
             HERO — asymmetric split
            ========================================== */}
         <header className="hero">
+          <h1 className="hero-title hero-title-top">
+            BUỔI CHÚC MỪNG TỐT NGHIỆP
+          </h1>
+
           <div className="hero-grid">
             <div className="hero-left">
               <button
@@ -442,27 +448,23 @@ function App() {
                 </div>
                 <div className="polaroid-caption">MINH DƯƠNG</div>
               </button>
+
+              <p className="photo-switch-hint">
+                <span aria-hidden="true">✨</span> Nhấp vào ảnh để xem Minh Dương xinh xắn như thế nào nhé
+              </p>
             </div>
 
             <div className="hero-right">
               <span className="eyebrow">Lễ Tốt nghiệp · 07.08.2026</span>
 
-              <h1 className="hero-title">
-                Gặp bạn ở <em>sảnh A</em>
-              </h1>
-
               <p className="hero-subtitle">
                 Thân mời bạn chung vui và chúc mừng tân cử nhân{' '}
-                <strong>Minh Dương aka Mind</strong> — Cử nhân ngành Luật, khoa Luật Thương mại.
+                <strong>Minh Dương aka MinD</strong> — Cử nhân ngành Luật, khoa Luật Thương mại.
               </p>
 
               <p className="hero-lead">
                 Được chụp cùng bạn một tấm ảnh và nhận lời chúc mừng của bạn là niềm vui lớn nhất
                 ở điểm cuối của chặng đường vừa qua.
-              </p>
-
-              <p className="photo-switch-hint">
-                <span aria-hidden="true">✨</span> Nhấp vào ảnh để xem Minh Dương xinh xắn như thế nào nhé
               </p>
 
               {/* Countdown */}
@@ -560,26 +562,24 @@ function App() {
         </section>
 
         {/* ==========================================
-            MỤC 3B: SƠ ĐỒ KHUÔN VIÊN
+            MỤC 3B: ĐÔI CHÚT TÂM TÌNH VỀ QUÀ TẶNG
            ========================================== */}
-        <section className="section-card variant-feature" id="ban-do-khuon-vien" aria-labelledby="khuon-vien-title">
+        <section className="section-card variant-feature" id="tam-tinh-qua-tang" aria-labelledby="khuon-vien-title">
           <h2 className="section-title" id="khuon-vien-title">
-            <svg className="section-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21" /><line x1="9" y1="3" x2="9" y2="18" /><line x1="15" y1="6" x2="15" y2="21" /></svg>
-            Sơ đồ khuôn viên UIT
+            <span className="section-icon-emoji" aria-hidden="true">📌</span>
+            Đôi chút tâm tình về quà tặng
           </h2>
           <p className="map-note">
-            🗺️{' '}
-            <strong>Sơ đồ giảng đường &amp; các khu vực</strong>:{' '}
-            Sảnh A sẽ là nơi làm lễ chính. Sau khi làm lễ xong, mình sẽ di chuyển ra{' '}
-            <strong>Sân trường</strong> (ngay logo Ulaw vàng ở sảnh A) để chụp hình cùng mọi người.
+            Em cảm ơn mọi người vì đã là một phần trong thanh xuân của em. Sự hiện diện và những lời chúc mừng của mọi người đã là món quà quý giá nhất với em nên mọi người đừng bận tâm đến việc có quà hay không nhé 😘
+            <br />
+            Nếu vẫn muốn tặng em một món quà, em sẽ rất vui nếu đó là một món quà lưu niệm để sau này nhìn lại em sẽ luôn nhớ về mọi người.
+            <br />
+            Còn nếu mọi người định mua hoa chúc mừng, em xin phép được gửi một lời nhắn nhỏ. Thay vì mua hoa, mọi người có thể chuyển khoản số tiền đó vào quỹ từ thiện của em để em tiếp tục thực hiện các dự án tình nguyện trong thời gian tới. Dù là 1.000 đồng, 10.000 đồng hay 100.000 đồng, với em đều vô cùng trân quý. Nhờ vậy, thay vì một bó hoa chỉ rực rỡ trong ngày tốt nghiệp, mọi người sẽ cùng em trao đi những “bông hoa” của yêu thương đến những hoàn cảnh khó khăn 🌻
+            <br />
+            Em rất mong mọi người hiểu đây chỉ là mong muốn cá nhân của em, hoàn toàn không phải là sự đòi hỏi quà hay tiền. Nếu lời nhắn này khiến mọi người hiểu lầm thì em thật lòng xin lỗi, và mọi người cứ nhắn cho em nếu muốn em giải thích thêm ạ 🥰
+            <br />
+            Cuối cùng, em cảm ơn mọi người vì đã luôn yêu thương, ủng hộ và đồng hành cùng em trong suốt chặng đường vừa qua. Yêu cả nhà mình rất nhiều ạaaaaa 💞
           </p>
-          <div className="campus-map-container">
-            <img
-              src="/UITMap.png"
-              alt="Sơ đồ khuôn viên UIT" 
-              className="campus-map-img"
-            />
-          </div>
         </section>
 
         {/* ==========================================
